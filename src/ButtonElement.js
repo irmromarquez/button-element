@@ -42,7 +42,7 @@ export class ButtonElement extends LitElement {
 constructor() {
     super();
     this.selected = false;
-    this.name = '1'
+    this.name = 'Button'
 }
 
 _buttonClick(e) {
