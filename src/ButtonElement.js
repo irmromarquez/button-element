@@ -1,5 +1,4 @@
 import { LitElement, html, } from 'lit-element';
-import { getComponentSharedStyles } from '@bbva-web-components/bbva-core-lit-helpers';
 import styles from './ButtonElement-styles.js';
 
 import bootstrap from "./styles/bootstrap";
@@ -26,7 +25,6 @@ export class ButtonElement extends LitElement {
   static get styles() {
     return [
       styles,
-      getComponentSharedStyles('button-element-shared-styles'),
       bootstrap
     ];
   }
