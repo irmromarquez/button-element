@@ -26,12 +26,19 @@
   </head>
 
   <body>
-    <bbva-core-demo-helper>
+    <bbva-core-demo-helper events='["button-click"]'>
       <bbva-core-demo-case heading="Basic" description="Default specs">
         <template>
           <button-element></button-element>
         </template>
       </bbva-core-demo-case>
+
+      <bbva-core-demo-case heading="Basic with text" description="Default specs">
+        <template>
+          <button-element name="prueba"></button-element>
+        </template>
+      </bbva-core-demo-case>
+
     </bbva-core-demo-helper>
   </body>
 </html>
