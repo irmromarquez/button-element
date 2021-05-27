@@ -1,5 +1,4 @@
 import { LitElement, html, } from 'lit-element';
-import { getComponentSharedStyles } from '@bbva-web-components/bbva-core-lit-helpers';
 import styles from './ButtonElement-styles.js';
 
 import bootstrap from "./styles/bootstrap";
@@ -26,7 +25,6 @@ export class ButtonElement extends LitElement {
   static get styles() {
     return [
       styles,
-      getComponentSharedStyles('button-element-shared-styles'),
       bootstrap
     ];
   }
@@ -36,12 +34,16 @@ export class ButtonElement extends LitElement {
         identifier: { type: String },
         selected: { type: Boolean },
         name: { type: String },
+        btnDisabled: {type: Boolean, attribute: 'btn-disabled'}
     };
 }
 
 constructor() {
     super();
     this.selected = false;
+    this.name = '1';
+
+    this.btnDisabled = false;
 }
 
 _buttonClick(e) {
@@ -66,6 +68,7 @@ _buttonClick(e) {
 render() {
     return html`<button
         type="button"
+        ?disabled=${this.btnDisabled}
         class="${this.selected ? "selected" : ""}"
         value=${this.name}
         @click="${this._buttonClick}"
