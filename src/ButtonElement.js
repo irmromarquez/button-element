@@ -34,16 +34,16 @@ export class ButtonElement extends LitElement {
         identifier: { type: String },
         selected: { type: Boolean },
         name: { type: String },
-        hola: {type: String},
+        btnDisabled: {type: Boolean, attribute: 'btn-disabled'}
     };
 }
-
-// PRUEBA RAUL
 
 constructor() {
     super();
     this.selected = false;
-    this.name = 'Button'
+    this.name = '1';
+
+    this.btnDisabled = false;
 }
 
 _buttonClick(e) {
@@ -68,6 +68,7 @@ _buttonClick(e) {
 render() {
     return html`<button
         type="button"
+        ?disabled=${this.btnDisabled}
         class="${this.selected ? "selected" : ""}"
         value=${this.name}
         @click="${this._buttonClick}"
