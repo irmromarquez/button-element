@@ -36,6 +36,7 @@ export class ButtonElement extends LitElement {
         identifier: { type: String },
         selected: { type: Boolean },
         name: { type: String },
+        hola: {type: String},
     };
 }
 
